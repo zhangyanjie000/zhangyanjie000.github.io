@@ -154,7 +154,18 @@ function FiveReturns(){
 });
 $(".tishiclickchanjin").click(function(){
   mySwiper.slideToLoop(5,1000,false);
+  abc();
 })
+var jiantouclick=0;
+function abc(){
+  jiantouclick++;
+  if(jiantouclick==1){
+    document.getElementById("fangzi2-woshi").style.overflowX= "hidden";
+  }
+  else{
+    document.getElementById("fangzi2-woshi").style.overflowX= "scroll";
+  }
+}
 // 选择房间切换背景
 var page4 = document.querySelector(".page4");
 swiper2.on('slideChange', function () {
@@ -297,6 +308,9 @@ function cesuo(){
   })
 }
 $('.woshi').click(function(){
+  jiantouclick++
+  abc();
+  console.log("sjhg")
     mySwiper.slideToLoop(5,1000,false);
     $(".tansuotext").css("opacity","0");
 })
@@ -364,6 +378,7 @@ tishijiantou3.style.left = woshi_juli4+"px";
 function showPaperAfterCheckBoth() {
   if(animationVars.showArrow3 || animationVars.showArrow4 ) return
   hideclick();
+  document.getElementById("fangzi2-woshi").style.overflowX= "hidden";
   woshi = 1;
   woshitrue();
   $(".charactert").css({"opacity":"1","z-index":"999"});
@@ -391,6 +406,7 @@ $(".tishibg2").click(function(){
 $(".tishibg3").click(function(){
   $(".chanjintishi2").css({"opacity":"0","z-index":"-1"});
   $(".tishibg3").css({"z-index":"-2","opacity":"0"});
+  document.getElementById("fangzi2-woshi").style.overflowX= "scroll";
 })
 // 完成后返回页面左侧
 var woshitansuo = document.querySelector(".woshitansuo");
@@ -462,6 +478,7 @@ $(".water").click(function(){
   $(".water").css("opacity","0");
   $(".tishijiantou2-1").css("opacity","0");
   document.getElementById("shuidimp3").pause();
+  document.getElementById("fangzi2-cesuo").style.overflowX= "hidden";
   $(".chufan1").css("filter","grayscale(0%)");
   $(".tansuotext").css("opacity","1");
   for(i=0;i<jindutiao.length;i++){
@@ -531,6 +548,7 @@ function lit(){
   },1000);
   setTimeout(function() {
     mySwiper.slideToLoop(7,1000,false);
+    document.getElementById("fangzi2-chufang").style.overflowX= "hidden";
     $(".chufangtext").css("z-index","999");
   }, 4000);
 }
@@ -623,6 +641,7 @@ var jieyueyongdian = document.querySelector(".jieyueyongdian");
 var remote = document.querySelector(".remote");
 var ketingtansuo = document.querySelector(".ketingtansuo");
 function ketingtrue(){
+  document.getElementById("fangzi2-keting").style.overflowX= "hidden";
   hideclick();
   var juli = remote.offsetLeft-remote.getBoundingClientRect().left;
   keting6.style.left = juli+"px";
@@ -669,8 +688,7 @@ $(".remote").click(function(){
   });
     $(".jieyueyongdian").click(function(){
       $(".tansuotext").css("opacity","0");
-      setTimeout(posters,3000);
-      FiveReturns();
+      posters();
     })
 // 最后海报点击刷新再来一次
 $(".Onemoreround").click(function(){

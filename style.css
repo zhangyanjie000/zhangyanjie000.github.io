@@ -446,6 +446,7 @@ color: #999;
   left: 50%;
   top: 40%;
   transform: translate(-50%,-50%);
+  filter:grayscale(100%);
 }
 .testimonialBox .woshi{
   filter:grayscale(0%);
@@ -506,6 +507,8 @@ color: #999;
   filter:blur(5px);
   z-index:-1;
   background-size:cover;
+  /* filter:grayscale(100%); */
+  
 }
 .page5::before{
   background-size: cover;
